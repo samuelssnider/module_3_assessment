@@ -20,5 +20,15 @@
         <a href="/orders">Orders</a>
       </li>
     </ul>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <%= form_tag :search, method: :get, class: "form-inline" do %>
+          <div class="form-group search-field">
+            <%= text_field_tag :q, "Search by zip...", class: "form-control" %>
+            <%= submit_tag "Locate", class: "btn btn-primary" %>
+          </div>
+        <% end %>
+      </ul>
+    </div>
   </div>
 </nav>

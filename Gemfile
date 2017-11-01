@@ -12,6 +12,9 @@ gem "faker"
 gem "therubyracer"
 gem "less-rails-bootstrap"
 gem "minitest-rails"
+gem 'faraday'
+gem 'figaro'
+gem 'rspec-rails'
 
 group :development do
   gem "spring"
