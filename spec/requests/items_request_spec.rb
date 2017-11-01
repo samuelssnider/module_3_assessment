@@ -48,6 +48,18 @@ describe "when i send a delete request to api-v1-items-show" do
     expect(Item.last).to eq(item)
   end
 end
-# When I send a GET request to /api/v1/items I receive a 200 JSON response containing all items And each item has an id, name, description, and image_url but not the created_at or updated_at
-# When I send a GET request to /api/v1/items/1 I receive a 200 JSON response containing the id, name, description, and image_url but not the created_at or updated_at
-# When I send a DELETE request to /api/v1/items/1 I receive a 204 JSON response if the record is successfully deleted
+
+
+describe "when i send a post request to api-v1-items" do
+  it "I should recieve a 201 response with one item" do
+    item   = Item.new(name: "Toy", description: "Yeah", image_url: "hey")
+    post "api/v1/items?name=#{item.name}&description=#{item.description}&image_url=#{item.image_url}"
+    
+    expect(response).to have_http_status(201)
+    expect(Item.count).to eq(1)
+    expect(Item.last.name).to eq(item.name)
+    expect(Item.last.description).to eq(item.description)
+    expect(Item.last.image_url).to eq(item.image_url)
+  end
+end
+# When I send a POST request to /api/v1/items with a name, description, and image_url I receive a 201 JSON response if the record is successfully created And I receive a JSON response containing the id, name, description, and image_url but not the created_at or updated_at
