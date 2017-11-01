@@ -1,1 +1,9 @@
-<h4> Stores near your zipcode: </h4>
+<h4 class='total-stores'> Stores near your zipcode:  (<% "#{@count}" %> total) </h4>
+<% @stores.each do |store| %>
+  <p class='long-name'><% store.name %> </p>
+  <p class='city'><% store.city %> </p>
+  <p class='distance'><% store.distance %> </p>
+  <p class ='phone-number'><% store.phone %> </p>
+  <p class ='store-type'><% store.type %> </p> 
+<% end %>
+  
