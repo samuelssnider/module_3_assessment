@@ -15,6 +15,7 @@ gem "minitest-rails"
 gem 'faraday'
 gem 'figaro'
 gem 'rspec-rails'
+gem "active_model_serializers"
 
 group :development do
   gem "spring"
