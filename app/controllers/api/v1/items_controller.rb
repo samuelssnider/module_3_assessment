@@ -17,8 +17,12 @@ module Api
       end
       
       def create
-        @item = Item.create(item_params)
-        render json: @item, status: 201
+        if item_params[:name] && item_params[:description] && item_params[:image_url]
+          @item = Item.create(item_params)
+          render json: @item, status: 201
+        else
+          puts "Item could not be created"
+        end
       end
       
       private

@@ -16,6 +16,7 @@ gem 'faraday'
 gem 'figaro'
 gem 'rspec-rails'
 gem "active_model_serializers"
+gem 'will_paginate', '~> 3.1.1'
 
 group :development do
   gem "spring"

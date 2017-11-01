@@ -7,4 +7,5 @@ class Store
     @phone = phone
     @type = type
   end
+  
 end
